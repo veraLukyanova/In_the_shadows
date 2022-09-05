@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class NumbersSchool : MonoBehaviour
 {
     public GameObject logo4;
     public GameObject logo2;
 
+    public GameObject win;
     // скорость вращения/перемещения
     private float RotateSpeed_x = 5f;
     private float RotateSpeed_y = 4f;
@@ -51,6 +54,7 @@ public class NumbersSchool : MonoBehaviour
         logo4.transform.position = new Vector3(3f,4f,-6f);
         logo2.transform.rotation = Quaternion.Euler(46.275f, -3.75f, 0.0f);
         logo4.transform.rotation = Quaternion.Euler(-1.95f,27f,0.0f);
+        win.SetActive(false);
     }
  
     private bool logo4_and_logo2_is_close(float distance)
@@ -67,7 +71,7 @@ public class NumbersSchool : MonoBehaviour
     {
         if (Quaternion.Angle(logo4.transform.rotation, Quaternion.Euler(turningRotation_logo4.x, turningRotation_logo4.y, turningRotation_logo4.z)) < range)
         {
-            Debug.Log("finish 1");
+            //Debug.Log("finish 1");
             return (true);
         }
         return (false);
@@ -78,7 +82,7 @@ public class NumbersSchool : MonoBehaviour
         if (Quaternion.Angle(logo2.transform.rotation, Quaternion.Euler(turningRotation_logo2.x, turningRotation_logo2.y, turningRotation_logo2.z)) < range ||
             Quaternion.Angle(logo2.transform.rotation, Quaternion.Euler(turningRotation_2_logo2.x, turningRotation_2_logo2.y, turningRotation_2_logo2.z)) < range)
         {
-            Debug.Log("finish 3");
+            //Debug.Log("finish 3");
             return (true);
         }
         return (false);
@@ -119,6 +123,7 @@ public class NumbersSchool : MonoBehaviour
             yield return new WaitForSeconds(time_ending / _divider);
             ++i;
         }
+        win.SetActive(true);
     }
 
     private void move_object(ref GameObject obj)// ref float new_x, ref float new_y)
@@ -144,6 +149,11 @@ public class NumbersSchool : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKey(KeyCode.LeftControl))
+        {
+            SceneManager.LoadScene(0);
+        }
+        
         if (!blockMouse)
         {
             if(Input.GetKeyDown("space"))
@@ -181,67 +191,3 @@ public class NumbersSchool : MonoBehaviour
         }
     }
 }
-
-
-// using System.Collections;
-// using System.Collections.Generic;
-// using UnityEngine;
-
-// public class NumbersSchool: MonoBehaviour
-// {
-//     public GameObject logo2;
-//     public GameObject logo4;
-//     // скорость вращения
-//     private float xSpeed = 250.0f;
-//     private float ySpeed = 150.0f;
-//     private float xSpeed3 = 250.0f;
-//     private float ySpeed3 = 150.0f;
-//     //Угол поворота
-//     private float x = 0.0f;
-//     private float y = 0.0f;
-//     private float x3 = 0.0f;
-//     private float y3 = 0.0f;
-
-//     void Start()
-//     {
-//         logo2.transform.position = new Vector3(-1f,6f,-5f);
-//         logo4.transform.position = new Vector3(3f,4f,-6f);
-//         logo2.transform.rotation = Quaternion.Euler(46.275f, -3.75f, 0.0f);
-//         logo4.transform.rotation = Quaternion.Euler(-1.95f,27f,0.0f);
-//     }
-
-//     void Update()
-//     {
-//         if(Input.GetMouseButton(0) && Input.GetKey(KeyCode.LeftControl))
-//         {
-//             Vector3 Cursor = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10));
-//             logo2.transform.position = Cursor;
-//         }
-//         else if (Input.GetMouseButton(1) && Input.GetKey(KeyCode.LeftControl))
-//         {
-//             //Input.GetAxis("MouseX ") Получить расстояние по оси X и Y движения мыши
-//             x += Input.GetAxis("Mouse X") * xSpeed * 0.02f;
-//             y -= Input.GetAxis("Mouse Y") * ySpeed * 0.02f;
-//             // Углы Эйлера конвертируются в кватернионы
-//             Quaternion rotationStart = Quaternion.Euler(-y, -x, 0);
-//             logo2.transform.rotation = rotationStart;
-//         }
-
-//         else if(Input.GetMouseButton(0))
-//         {
-//             Vector3 Cursor3 = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10));
-//             logo4.transform.position = Cursor3;
-//         }
-//         else if (Input.GetMouseButton(1))
-//         {
-//             //Input.GetAxis("MouseX ") Получить расстояние по оси X и Y движения мыши
-//             x3 += Input.GetAxis("Mouse X") * xSpeed3 * 0.02f;
-//             y3 -= Input.GetAxis("Mouse Y") * ySpeed3 * 0.02f;
-//             // Углы Эйлера конвертируются в кватернионы
-//             Quaternion rotationStart2 = Quaternion.Euler(-y3, -x3, 0);
-//             logo4.transform.rotation = rotationStart2;
-//         }
-//     }
-// }
-
-// 

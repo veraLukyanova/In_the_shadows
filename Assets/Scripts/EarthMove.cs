@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class EarthMove : MonoBehaviour
 {
     public GameObject earth;
     public GameObject bases;
+
+    public GameObject win;
 
     // скорость вращения/перемещения
     private float RotateSpeed_x = 5f;
@@ -60,6 +64,7 @@ public class EarthMove : MonoBehaviour
     {
         earth.transform.position = new Vector3(1f,6f,-4f);
         bases.transform.position = new Vector3(2f,3f,-5f);
+        win.SetActive(false);
     }
  
     private bool earth_and_base_is_close(float distance)
@@ -96,7 +101,6 @@ public class EarthMove : MonoBehaviour
             end_rotation = turningRotation_earth_4;
             return (true);
         }
-
         return (false);
     }
 
@@ -116,7 +120,6 @@ public class EarthMove : MonoBehaviour
             end_position = base_position_end_4;
             return (true);
         }
-
         return (false);
     }
 
@@ -155,6 +158,7 @@ public class EarthMove : MonoBehaviour
             yield return new WaitForSeconds(time_ending / _divider);
             ++i;
         }
+        win.SetActive(true);
     }
 
     private void move_object(ref GameObject obj)// ref float new_x, ref float new_y)
@@ -180,6 +184,11 @@ public class EarthMove : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKey(KeyCode.LeftControl))
+        {
+            SceneManager.LoadScene(0);
+        }
+
         if (!blockMouse)
         {
             if(Input.GetKeyDown("space")) //при нажатии на спейс переключаемся с объекта на объект. Изначально earth_flag = false;

@@ -1,32 +1,44 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TeaPotMove : MonoBehaviour
 {
+    public GameObject win;
+
     // скорость вращения
     private float ySpeed = 250.0f;
+
     //Угол поворота
     private float y = 0.0f;
     private bool blockMouse = false;
     private bool end_game = false;
 
     private float turningRotationY = 55f; //конечный угол - объект в идеальном повороте
-    private float finishRotationMin = 40f;
-    private float finishRotationMax = 68f;
+    private float finishRotationMin = 38f;
+    private float finishRotationMax = 64f;
     private float turningRotationY_2 = -129.4f; //конечный угол - объект в идеальном повороте
-    private float finishRotationMin2 = -114f;
-    private float finishRotationMax2 = -130f;
+    private float finishRotationMin2 = -113f;
+    private float finishRotationMax2 = -131f;
 
-    private float time_ending = .5f;
+    private float time_ending = .6f;
     private float _divider = 100; //на сколько частей делим разницу м/у конечным углом и текущим
 
     void Start()
     {
         transform.position = new Vector3(0.4f,6f,-6.5f);
+        //transform.rotation = Quaternion.Euler(0.0f, 77.0f, 0.0f)
+        win.SetActive(false);
     }
 
-   private IEnumerator dovorot(float end_angle)
+    public void BackMenu() 
+    {
+        SceneManager.LoadScene (0);
+    }
+
+    private IEnumerator dovorot(float end_angle)
     {
         end_game = true;
         int i = 0;
@@ -39,10 +51,16 @@ public class TeaPotMove : MonoBehaviour
             yield return new WaitForSeconds(time_ending / _divider);
             ++i;
         }
+        win.SetActive(true);
     }
 
     void Update()
     {
+        if (Input.GetKey(KeyCode.LeftControl))
+        {
+            SceneManager.LoadScene(0);
+        }
+
         if (Input.GetMouseButton(1))
         {
             if (!blockMouse) 

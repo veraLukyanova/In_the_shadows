@@ -1,12 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ElephantMove : MonoBehaviour
 {
+    public GameObject win;
+
     // скорость вращения
     private float xSpeed = 250.0f;
     private float ySpeed = 250.0f;
+
     //Угол поворота
     private float x = 0.0f;
     private float y = 0.0f;
@@ -26,7 +31,17 @@ public class ElephantMove : MonoBehaviour
     private float time_ending = .5f;
     private float _divider = 100; //на сколько частей делим разницу м/у конечным углом и текущим
 
-   private IEnumerator dovorot(float end_angle_X, float end_angle_Y)
+    void Start()
+    {
+        win.SetActive(false);
+    }
+
+    public void BackMenu() 
+    {
+        SceneManager.LoadScene (0);
+    }
+
+    private IEnumerator dovorot(float end_angle_X, float end_angle_Y)
     {
         int i = 0;
         float cur_angle_X = x;
@@ -41,10 +56,16 @@ public class ElephantMove : MonoBehaviour
             yield return new WaitForSeconds(time_ending / _divider);
             ++i;
         }
+        win.SetActive(true);
     }
 
     void Update()
     {
+        if (Input.GetKey(KeyCode.LeftControl))
+        {
+            SceneManager.LoadScene(0);
+        }
+
         if (Input.GetMouseButton(1))
         {
             if (!blockMouse) 
