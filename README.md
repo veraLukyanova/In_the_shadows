@@ -50,4 +50,4 @@ Distorted object representing a specific shadow with specific rotation and posit
 
 
 ### When your shadow is close to a recognizable object: 
-       #### the game will stop, and the object will slowly spin up to the ideal shape of the object.
+       ### the game will stop, and the object will slowly spin up to the ideal shape of the object.
