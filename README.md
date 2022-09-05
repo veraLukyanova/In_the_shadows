@@ -29,8 +29,8 @@ Game developed with Unity (C#).
   - Display name of level on the header or a hint if the level is not finished
   - Status text of corresponding level :
 
-                 - green : Locked
-                 - red : Available
+                 - red : Locked
+                 - green : Available
 
 ### levels of difficulty related to mouse movement possibilities.
 
