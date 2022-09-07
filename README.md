@@ -11,13 +11,13 @@ Game developed with Unity (C#).
 ## Two play modes:
   ### 1.Normal mode:
     - First level unlocked, by finishing a level you unlock the next one
-    - Progress saved with level's score and time spent to finish it
+    - Progress saved
   ### 2.Test mode (Cheat mode):
     - Unlimited access to all levels
     - Easy access to test each models validations
 ![image](https://user-images.githubusercontent.com/51932861/188354351-84ee2698-89b1-4e83-a3d6-f8811905b038.png)
 
-## Data saved on local disk, in json format
+## The data is saved on the local disk
 
 # Level selection
 
@@ -26,8 +26,8 @@ Game developed with Unity (C#).
 ## Selector
   - Animation when level is unlocked
   - Selection animation when a level is choosed
-  - Display name of level on the header or a hint if the level is not finished
-  - Status text of corresponding level :
+  - Text hint for each level
+  - Status of corresponding level :
 
                  - red : Locked
                  - green : Available
@@ -36,7 +36,7 @@ Game developed with Unity (C#).
 
   1. Horizontal rotation only (Horizontal:  Right Clic button Mouse  + mouse movement ← or →)
   2. Horizontal and vertical rotations (Vertical: Right Clic button Mouse + mouse movement ↑ or ↓)
-  3. Horizontal and vertical rotations + object positions (Positions(switch to another object): cpase)
+  3. Horizontal and vertical rotations + object positions (Positions(switch to another object): space)
 
 If the level is passed: go to the Level selection menu - click on the "WIN" button.
 
