@@ -11,7 +11,8 @@ Game developed with Unity (C#).
 ## Two play modes:
   ### 1.Normal mode:
     - First level unlocked, by finishing a level you unlock the next one
-    - Progress saved with level's score and time spent to finish it
+    - The completed level is saved
+    - Using the RESET button, it is possible to reset the progress of unlocked levels
   ### 2.Test mode (Cheat mode):
     - Unlimited access to all levels
     - Easy access to test each models validations
@@ -26,8 +27,8 @@ Game developed with Unity (C#).
 ## Selector
   - Animation when level is unlocked
   - Selection animation when a level is choosed
-  - Display name of level on the header or a hint if the level is not finished
-  - Status text of corresponding level :
+  - A text hint is displayed for each level
+  - Status of corresponding level :
 
                  - red : Locked
                  - green : Available
