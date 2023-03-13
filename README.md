@@ -1,7 +1,19 @@
 # In_the_shadows
 
-42 school project: 3D Puzzle game. Single player shadow puppet game. Shadowmatic like on what?
+###Игра для desktop версий ос написанная в unity3D на С#
 
+###Описание игры:
+Игра головоломка по мотивам мобильной игры shadowmatic. 
+Игрок должен менять положение и поворачивать один или несколько объектов таким образом, чтобы их тень образовала нужный предмет.
+
+###Как запустить игру у себя на ПК:
+Для тестирования игры необходимо скачать папку _Play_in_game. Далее нужно зайти в одну из папкок предназначенных для разных ОС(windows, linux, Mac):
+1) in_the_shadows_gconger_linux
+
+![image](https://user-images.githubusercontent.com/51932861/224725065-3286a5c2-a43b-49fe-84c8-92dd5c26eafe.png)
+
+
+42 school project: 3D Puzzle game. Single player shadow puppet game. Shadowmatic like on what?
 Game developed with Unity (C#).
 
 # Main Menu
