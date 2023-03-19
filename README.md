@@ -1,4 +1,5 @@
 # In_the_shadows (3D-игра-головоломка)
+Проект из програмы Ecole 42.
 
 Игра для Windows, Linux, MacOS. 
 Разработана в unity3D(С#)
