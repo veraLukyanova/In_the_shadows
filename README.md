@@ -9,9 +9,10 @@
 1. Ознакомиться с управлением в игре -> файл: "управление.md"
 2. Скачать папку _Play_in_game
 3. Зайти в папку с нужной ОС.
-4. В папке для Windows: запустить файл "In_the_shadows.exe"
-   В папке для Linux -> выбрать папку с желаемым разрешением -> запустить файл "linux_gconger_windowed.x86_64"
-   В папке для MacOS: запустить файл "In_the_shadows_gconger"
+4. 
+   - В папке для Windows: запустить файл "In_the_shadows.exe"
+   - В папке для Linux -> выбрать папку с желаемым разрешением -> запустить файл "linux_gconger_windowed.x86_64"
+   - В папке для MacOS: запустить файл "In_the_shadows_gconger"
 
 # Main Menu
 
