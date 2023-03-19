@@ -1,54 +1,60 @@
-# In_the_shadows
+# In_the_shadows (3D-игра-головоломка)
 
-42 school project: 3D Puzzle game. Single player shadow puppet game. Shadowmatic like on what?
+Игра для Windows, Linux, MacOS. Разработана в unity3D(С#)
 
-Game developed with Unity (C#).
+Игра головоломка по мотивам мобильной игры shadowmatic. Игрок должен менять положение и поворачивать один или несколько объектов таким образом, чтобы их тень образовала нужный предмет.
+
+Для запуска игры на пк:
+1. Ознакомиться с управлением в игре -> файл: "управление.md"
+2. Скачать папку _Play_in_game
+3. Зайти в папку с нужной ОС.
+4. В папке для Windows: запустить файл "In_the_shadows.exe"
+   В папке для Linux -> выбрать папку с желаемым разрешением -> запустить файл "linux_gconger_windowed.x86_64"
+   В папке для MacOS: запустить файл "In_the_shadows_gconger"
 
 # Main Menu
 
 ![image](https://user-images.githubusercontent.com/51932861/188350755-334bb066-6fe4-4f9e-9e99-3aa0e6fcbfdc.png)
 
-## Two play modes:
-  ### 1.Normal mode:
-    - First level unlocked, by finishing a level you unlock the next one
-    - The completed level is saved
-    - Using the RESET button, it is possible to reset the progress of unlocked levels
-  ### 2.Test mode (Cheat mode):
-    - Unlimited access to all levels
-    - Easy access to test each models validations
+## Два режима воспроизведения:
+ ### 1.Обычный режим:
+ - Первый уровень разблокирован, закончив уровень, вы разблокируете следующий
+ - Пройденный уровень сохраняется
+ - Используя кнопку СБРОСА, можно сбросить ход разблокированных уровней
+ ### 2.Тестовый режим (режим чита):
+ - Неограниченный доступ ко всем уровням
+ - Легкий доступ к тестированию валидаций каждой модели
 ![image](https://user-images.githubusercontent.com/51932861/188354351-84ee2698-89b1-4e83-a3d6-f8811905b038.png)
+## Данные, сохраненные на локальном диске в формате json
 
-## Data saved on local disk, in json format
-
-# Level selection
+# Выбор уровня
 
 ![image](https://user-images.githubusercontent.com/51932861/188350858-5f747168-c13d-4f4b-aee6-564d25d5249c.png)
 
-## Selector
-  - Animation when level is unlocked
-  - Selection animation when a level is choosed
-  - A text hint is displayed for each level
-  - Status of corresponding level :
+## Селектор
+ - Анимация при разблокировке уровня
+ - Анимация выбора при выборе уровня
+ - Для каждого уровня отображается текстовая подсказка
+ - Статус соответствующего уровня :
 
-                 - red : Locked
-                 - green : Available
+ - красный: Заблокирован
+ - зеленый: Доступен
 
-### levels of difficulty related to mouse movement possibilities.
+### уровни сложности, связанные с возможностями перемещения мыши.
 
-  1. Horizontal rotation only (Horizontal:  Right Clic button Mouse  + mouse movement ← or →)
-  2. Horizontal and vertical rotations (Vertical: Right Clic button Mouse + mouse movement ↑ or ↓)
-  3. Horizontal and vertical rotations + object positions (Positions(switch to another object): cpase)
+ 1. Вращение только по горизонтали (по горизонтали: Щелчок правой кнопкой мыши + перемещение мыши ← или →)
+ 2. Горизонтальные и вертикальные вращения (по вертикали: Щелчок правой кнопкой мыши + перемещение мыши ↑ или ↓)
+ 3. Горизонтальный и вертикальный повороты + положения объекта (положения (переключение на другой объект): cpase)
 
-If the level is passed: go to the Level selection menu - click on the "WIN" button.
+Если уровень пройден: перейдите в меню выбора уровня - нажмите на кнопку "WIN".
 
 ![image](https://user-images.githubusercontent.com/51932861/188352402-e4095242-5d89-4d3e-aef0-7c9cab6f94da.png)
 
-# Level scene
+# Сцена уровня
 
 ![image](https://user-images.githubusercontent.com/51932861/188352887-32d14099-d094-4ac7-aba7-0247ef8b6dc0.png)
 
-Distorted object representing a specific shadow with specific rotation and position.
+Искаженный объект, представляющий определенную тень с определенным поворотом и положением.
 
-
-### When your shadow is close to a recognizable object: 
-#### The game will stop, and the object will slowly spin up to the ideal shape of the object.
+### Когда ваша тень находится близко к узнаваемому объекту: 
+#### Игра остановится, и объект будет медленно вращаться до идеальной формы объекта.
